@@ -1,3 +1,4 @@
+console.log("슽덩ㅋㅋ");
 // 페이지 로드 시 바로 실행
 import { addEvent } from "./event";
 import { appendPalette } from "./palette";

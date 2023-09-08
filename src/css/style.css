@@ -12,8 +12,14 @@
     color:#fff;
 }
 
+.draw-on-web-palette > div {
+    margin-left:10px;
+}
+
 .draw-on-web-palette {
     position:fixed;
+    top:25px;
+    left:25px;
     background:rgba(28, 28, 28, 0.8);
     border-radius :11px;
     backdrop-filter: blur(2px);
@@ -27,6 +33,7 @@
     margin-left:10px;
     margin-top:5px;
     margin-bottom:5px;
+    font-size :14px;
 }
 
 .draw-on-web-palette > wrap {
@@ -35,4 +42,17 @@
 
 .draw-on-web-palette > wrap > div:first-child {
     font-size:16px;
+}
+
+.brush > items {
+    display:flex;
+}
+
+.brush > items > div {
+    display:inline-block;
+    width:20px;
+    height:20px;
+    flex-shrink: 0;
+    border-radius : 5px;
+    background: #383838;
 }

@@ -1,18 +1,20 @@
 // import brushes
-import { canvasVisibleState, ctx, disableCanvas, enableCanvas } from "./canvas";
+import { ctx, download, toggleCanvas } from "./canvas";
+import { togglePalette } from "./palette";
 // add draw events
 
 let pressed = false;
 let timer = 0;
 
-function toggleCanvas(e) {
+function keyEventHandler(e) {
     if(e.altKey && e.code === "Digit1") {
-        alert("슽덩이");
-        if(canvasVisibleState) disableCanvas();
-        else enableCanvas();
+        toggleCanvas();
+        togglePalette();
     }
+    // else if(e.altKey && e.code === "KeyS") {
+    //     download();
+    // }
 }
-
 
 export function addEvent() {
     let prevX, prevY;
@@ -62,5 +64,5 @@ export function addEvent() {
         ctx.putImageData(temp, 0, 0);
     });
     
-    document.addEventListener('keyup', toggleCanvas);
+    document.addEventListener('keyup', keyEventHandler);
 }
