@@ -12,12 +12,12 @@
     },
     "content_scripts": [
         {
-          "js": ["src/main.js"],
+          "css": [ "dist/assets/index-6bdc137e.css" ],
+          "js": ["dist/assets/index-f2177cf1.js"],
           "matches": [
             "https://*/*",
             "http://*/*"
           ]
         }
-      ],
-    "type": "module"
+      ]
   }
