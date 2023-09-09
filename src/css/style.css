@@ -5,6 +5,7 @@
     top:0;
     left:0;
     display:none;
+    z-index:9999;
 }
 
 .draw-on-web-palette * {
@@ -18,6 +19,7 @@
 
 .draw-on-web-palette {
     position:fixed;
+    z-index:10000;
     top:25px;
     left:25px;
     background:rgba(28, 28, 28, 0.8);

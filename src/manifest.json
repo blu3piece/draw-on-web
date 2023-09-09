@@ -4,7 +4,7 @@
     "description": "Alt + 1 으로 토글가능한 임시 그림판!",
     "version": "1.0",
     "action": {
-      "default_popup": "index.html",
+      "default_popup": "popup.html",
       "default_icon": "images/icon.png"
     },
     "icons": {
@@ -12,8 +12,8 @@
     },
     "content_scripts": [
         {
-          "css": [ "dist/assets/index-6bdc137e.css" ],
-          "js": ["dist/assets/index-f2177cf1.js"],
+          "css": [ "css/style.css" ],
+          "js": ["main.js"],
           "matches": [
             "https://*/*",
             "http://*/*"
