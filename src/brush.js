@@ -1,15 +1,16 @@
-
-let brushType = 0; // current brushType
-
-
-// rainbow brush
-// normal brush
+import { ctx } from "./canvas";
 class Brush {
-    constructor() {
-
+    static ctx;
+    fillType;
+    constructor(brushType) {
+        
     }
 
     fill() {
-
+        throw new Error("Fill must be ")
     }
 }
+
+Brush.ctx = ctx;
+
+export { Brush };

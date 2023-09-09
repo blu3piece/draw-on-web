@@ -1,7 +1,8 @@
-// import brushes
+// adds all events.
+// events should only be managed in this file.
+
 import { ctx, download, toggleCanvas } from "./canvas";
 import { togglePalette } from "./palette";
-// add draw events
 
 let pressed = false;
 let timer = 0;
@@ -23,8 +24,8 @@ export function addEvent() {
     window.addEventListener("mousedown", (e) => {
         if(e.button != 2) return;
         pressed = true;
-        prevX = e.clientX;
-        prevY = e.clientY;
+        prevX = e.pageX;
+        prevY = e.pageY;
     })
 
     window.addEventListener("mouseup", (e) => {
@@ -48,20 +49,20 @@ export function addEvent() {
         ctx.lineCap = 'round';
         ctx.lineJoin = 'round';
         ctx.strokeStyle = "hsl(" + hslColor + ", 100%, 50%)";
-        ctx.lineTo(e.clientX, e.clientY);
+        ctx.lineTo(e.pageX, e.pageY);
         ctx.lineWidth = 30;
         ctx.fillStyle = "hsl(" + hslColor + ", 100%, 50%)";
         ctx.stroke();
         ctx.closePath();
-        prevX = e.clientX;
-        prevY = e.clientY;
+        prevX = e.pageX;
+        prevY = e.pageY;
     });
     
     window.addEventListener('resize', (e) => {
-        const temp = ctx.getImageData(0,0,ctx.canvas.width, ctx.canvas.height);
-        ctx.canvas.width = window.innerWidth;
-        ctx.canvas.height = window.innerHeight;
-        ctx.putImageData(temp, 0, 0);
+        // const temp = ctx.getImageData(0,0,ctx.canvas.width, ctx.canvas.height);
+        // // ctx.canvas.width = window.innerWidth;
+        // // ctx.canvas.height = window.innerHeight;
+        // ctx.putImageData(temp, 0, 0);
     });
     
     document.addEventListener('keyup', keyEventHandler);

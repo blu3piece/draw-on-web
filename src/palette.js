@@ -1,3 +1,7 @@
+// manage palette HTML
+// manage brushes
+// send brush data to canvas in order to draw on it by its brush type.
+
 const htmlTag = `
 <div class="title">Draw on Web</div>
 <div class="brush wrap">
@@ -16,11 +20,11 @@ const htmlTag = `
 `;
 
 const element = document.createElement('div');
-element.className = "draw-on-web-palette";
-element.innerHTML = htmlTag;
-element.style.display = 'none';
 
-export function appendPalette() {
+export function addPalette() {
+    element.className = "draw-on-web-palette";
+    element.innerHTML = htmlTag;
+    element.style.display = 'none';
     document.body.appendChild(element);
 }
 

@@ -1,13 +1,14 @@
-
 const canvas = document.createElement('canvas');
-canvas.id = "draw-on-web";
-document.body.appendChild(canvas);
-canvas.style.display = 'none';
-
 export const ctx = canvas.getContext("2d");
 
 ctx.fillStyle = "#000000";
 ctx.globalAlpha = "1";
+
+export function addCanvas () {
+    canvas.id = "draw-on-web";
+    canvas.style.display = 'none';
+    document.body.appendChild(canvas);
+}
 
 function disableCanvas() {
     canvas.style.display = "none";
@@ -16,8 +17,8 @@ function disableCanvas() {
 function enableCanvas() {
     canvas.style.display = "block";
     canvas.style.pointerEvents = "none";
-    ctx.canvas.width = window.innerWidth;
-    ctx.canvas.height = window.innerHeight;
+    ctx.canvas.width = document.body.scrollWidth;
+    ctx.canvas.height = document.body.scrollHeight;
 }
 
 export function clearCanvas() {

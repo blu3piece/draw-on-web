@@ -1,11 +1,14 @@
-console.log("슽덩ㅋㅋ");
-// 페이지 로드 시 바로 실행
-import { addEvent } from "./event";
-import { appendPalette } from "./palette";
+// main function : defines entry points.
 
-console.log("DEV BY ST");
+import { addCanvas } from "./canvas";
+import { addEvent } from "./event";
+import { addPalette } from "./palette";
 
 (function() {
     addEvent();
-    appendPalette();
+    addCanvas();
+    addPalette();
 })();
+
+console.log("Draw on web :: Successfully Loaded from main.js");
+console.warn("Draw on web :: If this extension causes problem, contact to https://github.com/johannblue");
