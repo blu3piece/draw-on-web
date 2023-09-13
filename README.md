@@ -1,3 +1,9 @@
+<p align="center">
+
+<img src="./docs/images/logo.png">
+
+</p>
+
 # Draw on web
 
 `드로우 온 웹(Draw on web)` 은 웹 페이지 위에 브러쉬 기능을 사용가능하게 해주는 크롬 익스텐션입니다.
@@ -21,6 +27,12 @@
 4. 해당 창에 압축해제된 Draw-on-web-0.1.0/ 디렉토리를 끌어다 놓기
 
 ## 기능
+
+<p align="center">
+
+<img src="./docs/images/example1.png">
+
+</p>
 
 
 ### 캔버스 토글
