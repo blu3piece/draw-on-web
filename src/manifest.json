@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Draw on Web",
     "description": "Alt + 1 으로 토글가능한 임시 그림판!",
-    "version": "1.0",
+    "version": "0.1.0",
     "action": {
       "default_popup": "popup.html",
       "default_icon": "images/icon.png"
