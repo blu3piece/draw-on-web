@@ -40,18 +40,16 @@ export function addEvent() {
     });
 
     window.addEventListener("mousemove", (e) => {
-        hslColor++;
-        hslColor %= 360;
         if(!pressed) return;
         timer++;
         ctx.beginPath();
         ctx.moveTo(prevX, prevY);
         ctx.lineCap = 'round';
         ctx.lineJoin = 'round';
-        ctx.strokeStyle = "hsl(" + hslColor + ", 100%, 50%)";
+        console.log(ctx.lineWidth);
+        console.log(ctx.fillStyle);
+        ctx.strokeStyle = ctx.fillStyle;
         ctx.lineTo(e.pageX, e.pageY);
-        ctx.lineWidth = 30;
-        ctx.fillStyle = "hsl(" + hslColor + ", 100%, 50%)";
         ctx.stroke();
         ctx.closePath();
         prevX = e.pageX;

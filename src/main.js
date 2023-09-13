@@ -1,6 +1,6 @@
 // main function : defines entry points.
 
-import { addCanvas } from "./canvas";
+import { addCanvas, ctx } from "./canvas";
 import { addEvent } from "./event";
 import { addPalette } from "./palette";
 
@@ -8,7 +8,9 @@ import { addPalette } from "./palette";
     addEvent();
     addCanvas();
     addPalette();
+    ctx.fillStyle = "#FFFFFF";
+    ctx.lineWidth = 10;
 })();
 
 console.log("Draw on web :: Successfully Loaded from main.js");
-console.warn("Draw on web :: If this extension causes problem, contact to https://github.com/johannblue");
+console.log("Draw on web :: If this extension causes problem, contact to https://github.com/johannblue");

@@ -1,13 +1,16 @@
+import { setColorFromPalette } from "./palette";
+
 const canvas = document.createElement('canvas');
 export const ctx = canvas.getContext("2d");
 
-ctx.fillStyle = "#000000";
 ctx.globalAlpha = "1";
 
 export function addCanvas () {
     canvas.id = "draw-on-web";
     canvas.style.display = 'none';
     document.body.appendChild(canvas);
+    ctx.fillStyle = "#FFFFFF";
+    console.log(ctx.fillStyle);
 }
 
 function disableCanvas() {
@@ -17,8 +20,10 @@ function disableCanvas() {
 function enableCanvas() {
     canvas.style.display = "block";
     canvas.style.pointerEvents = "none";
-    ctx.canvas.width = document.body.scrollWidth;
-    ctx.canvas.height = document.body.scrollHeight;
+    ctx.canvas.width = document.body.scrollWidth - 1;
+    ctx.canvas.height = document.body.scrollHeight - 1;
+    setColorFromPalette();
+
 }
 
 export function clearCanvas() {

@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;500;700;900&family=Nunito&display=swap');
-
 #draw-on-web {
     position:absolute;
     top:0;
@@ -9,12 +7,15 @@
 }
 
 .draw-on-web-palette * {
-    font-family: 'Nunito', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size : 18px;
     color:#fff;
+    user-select: none;
 }
 
 .draw-on-web-palette > div {
-    margin-left:10px;
+    margin-left:15px;
+    margin-bottom:10px;
 }
 
 .draw-on-web-palette {
@@ -26,35 +27,84 @@
     border-radius :11px;
     backdrop-filter: blur(2px);
     box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
-    width: 140px;
-    height: 222px;
+    width: 200px;
+    height: 300px;
     flex-shrink: 0;
 }
 
 .draw-on-web-palette > .title {
-    margin-left:10px;
-    margin-top:5px;
+    margin-top:15px;
+    font-size :24px;
+}
+.draw-on-web-palette .brush > items {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.draw-on-web-palette .brush > items > div{
+    cursor:pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.draw-on-web-palette .title {
     margin-bottom:5px;
-    font-size :14px;
 }
 
-.draw-on-web-palette > wrap {
-    margin-bottom:10px;
+.draw-on-web-palette .items {
+    display: flex;
+    gap: 15px;
+    align-items: center;
 }
 
-.draw-on-web-palette > wrap > div:first-child {
-    font-size:16px;
-}
-
-.brush > items {
-    display:flex;
-}
-
-.brush > items > div {
+.draw-on-web-palette .brush .items div {
     display:inline-block;
-    width:20px;
-    height:20px;
+    width:40px;
+    height:40px;
     flex-shrink: 0;
     border-radius : 5px;
     background: #383838;
+}
+
+.draw-on-web-palette .color .items {
+    align-items: flex-start;
+}
+
+.draw-on-web-palette .color-picker {
+    cursor:pointer;
+    padding: 0;
+    margin: 0;
+    border: none;
+    width:40px;
+    height:40px;
+    box-shadow: none;
+    border-radius: 100px;
+    background: none;
+    display:flex;
+    gap:5px;
+}
+  
+.draw-on-web-palette .color-picker::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+  
+.draw-on-web-palette .color-picker::-webkit-color-swatch {
+    border: none;
+    border-radius:5px; 
+}
+
+
+.draw-on-web-palette .thickness {
+    width:60px;
+    height:40px;
+    padding:5px;
+    border:none;
+    margin:0;
+    background:#1e1e1e;
+    border-radius:5px;
 }
