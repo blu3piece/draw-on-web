@@ -1,9 +1,10 @@
-// const root = document.createElement('div');
-// root.id = "crx-root";
-// document.body.appendChild(root);
+import { createRoot } from "react-dom/client";
+import App from "./app/App";
 
-// ReactDOM.createRoot(root).render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-// )
+const root = document.createElement('div');
+root.id = "drw-root";
+document.body.appendChild(root);
+
+createRoot(root).render(
+  <App />
+)

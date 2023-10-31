@@ -1,6 +1,7 @@
-import styles from './App.module.css';
+// import styles from './Popup.module.css';
+import "./global.css";
 
-export default function App() {
+export default function Settings() {
 
   return (
     <main>
