@@ -45,7 +45,6 @@ export const CanvasContextProvider = (params: CanvasContextProviderParams) => {
     if (!ctx.current) return;
     ctx.current.strokeStyle = ctx.current.fillStyle = fillColor;
     ctx.current.lineWidth = brushSize;
-    console.log("바뀐");
   }, [fillColor, brushSize]);
 
   useEffect(() => {
