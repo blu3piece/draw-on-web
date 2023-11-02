@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import styles from "./ColorPicker.module.css";
 import { getCanvasContext } from "./modules/canvas_context";
 
