@@ -1,0 +1,15 @@
+:root {
+    --drw-font-color-first:#000000;
+    --drw-font-color-second:#242424;
+    --drw-font-color-third:#292929;
+    --drw-bg-color:rgba(211, 211, 211, 0.4);
+}
+
+#drw-root * {
+    box-sizing: unset !important;
+    line-height:1.2 !important;
+}
+
+.hide-canvas {
+    opacity:0;
+}

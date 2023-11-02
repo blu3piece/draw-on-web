@@ -1,0 +1,82 @@
+.itemWrap {
+    padding: 10px;
+}
+
+.item {
+    display: flex;
+    width:40px;
+    height:40px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    border-radius: 10px !important;
+}
+
+.brushIcon {
+    filter: brightness(1) !important;
+}
+
+.strokeSettingWrap {
+    background: rgb(126 126 126 / 48%);
+    backdrop-filter: blur(10px);
+    position: absolute;
+    left: 72px;
+    width: 200px;
+    height: 50px;
+    border-radius: 5px !important;
+
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+    transition: 300ms all ease-in-out;
+}
+
+
+
+.strokeSettingWrap button:nth-child(1) {
+    border: none;
+    background: white;
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border-radius: 50% !important;
+}
+
+.strokeSettingWrap button:nth-child(2) {
+    border: none;
+    background: white;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border-radius: 50% !important;
+}
+
+.strokeSettingWrap button:nth-child(3) {
+    border: none;
+    background: white;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border-radius: 50% !important;
+}
+
+.strokeSettingWrap button:nth-child(4) {
+    border: none;
+    background: white;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 50% !important;
+}
+
+.strokeSettingWrap button:active {
+    background: rgb(158, 158, 158);
+}
+
+
+.hide {
+    width:0px;
+}

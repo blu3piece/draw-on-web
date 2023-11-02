@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Draw on Web",
+  "description": "Draw on your webpage, Get inspired!",
+  "version": "0.0.2",
+  "icons": {
+    "16": "icon.png",
+    "32": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "action": { "default_popup": "index.html" },
+  "content_scripts": [
+    {
+      "js": ["src/content.tsx"],
+      "matches": ["http://*/*", "https://*/*"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/assets/*",
+        "src/assets/fonts/*"
+      ],
+      "matches": ["http://*/*", "https://*/*"]
+    }
+  ],
+  "permissions": [
+    "storage"
+  ]
+}

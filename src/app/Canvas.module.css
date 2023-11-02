@@ -1,0 +1,8 @@
+.canvas {
+    transition:all 300ms ease-in-out;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:999998;
+    pointer-events: none;
+}
