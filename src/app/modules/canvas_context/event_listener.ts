@@ -30,7 +30,6 @@ function doBrush(params: doBrushParams) {
 
   ctx.lineCap = "round";
   ctx.lineJoin = "round";
-  ctx.lineWidth = 30;
 
   ctx.lineTo(event.pageX, event.pageY);
 

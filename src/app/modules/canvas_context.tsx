@@ -1,11 +1,17 @@
 import { useContext, createContext, useRef, useEffect, useState } from "react";
 import { toggleCanvas as tg } from "./canvas_context/event_listener";
 
+type BrushSize = 10 | 20 | 30 | 40;
+
 interface CanvasContext {
-  setCanvasVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  canvasVisible:boolean;
   fillColor:string;
+  brushSize:BrushSize;
+  setCanvasVisible: React.Dispatch<React.SetStateAction<boolean>>;
   setFillColor: React.Dispatch<React.SetStateAction<string>>;
+  setBrushSize: React.Dispatch<React.SetStateAction<BrushSize>>;
   canvasRef: React.RefObject<HTMLCanvasElement>;
+  clearCanvas : () => void;
   ctx: React.RefObject<CanvasRenderingContext2D | null>;
 }
 
@@ -27,15 +33,24 @@ export const CanvasContextProvider = (params: CanvasContextProviderParams) => {
   const pressed = useRef<boolean>(false);
 
   const [fillColor, setFillColor] = useState<string>("#ffffff");
+  const [brushSize, setBrushSize] = useState<BrushSize>(20);
   const [canvasVisible, setCanvasVisible] = useState<boolean>(false);
+
+  function clearCanvas() {
+    if(!ctx.current) return;
+    ctx.current.clearRect(0, 0, ctx.current.canvas.width, ctx.current.canvas.height);
+  }
 
   useEffect(() => {
     if (!ctx.current) return;
     ctx.current.strokeStyle = ctx.current.fillStyle = fillColor;
-  }, [fillColor]);
+    ctx.current.lineWidth = brushSize;
+    console.log("바뀐");
+  }, [fillColor, brushSize]);
 
   useEffect(() => {
     if (!ctx.current) return;
+    ctx.current.lineWidth = brushSize;
     tg({
       ctx: ctx.current,
       status: canvasVisible,
@@ -60,11 +75,15 @@ export const CanvasContextProvider = (params: CanvasContextProviderParams) => {
   }, []);
 
   const exportProps = {
-    setCanvasVisible,
+    canvasVisible,
+    brushSize,
     fillColor,
+    setBrushSize,
+    setCanvasVisible,
     setFillColor,
     ctx,
     canvasRef: canvas,
+    clearCanvas,
   };
 
   return <canvasContext.Provider value={exportProps}>{children}</canvasContext.Provider>;
