@@ -64,7 +64,7 @@ function handleMouseMove(e :MouseEvent) {
 
 function handleRightClick(e: MouseEvent) {
   const {contextMenuTimer} = EventContext.params;
-  if (contextMenuTimer.current >= 10) e.preventDefault();
+  e.preventDefault();
   contextMenuTimer.current = 0;
 }
 
